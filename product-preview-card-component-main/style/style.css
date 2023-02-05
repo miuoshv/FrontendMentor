@@ -1,5 +1,6 @@
 :root {
 	--dark-cyan: hsl(158, 36%, 37%);
+	--very-dark-cyan: hsl(158, 36%, 25%);
 	--cream: hsl(30, 38%, 92%);
 	--very-dark-blue: hsl(212, 21%, 14%);
 	--dark-grayish-blue: hsl(228, 12%, 48%);
@@ -7,6 +8,7 @@
 	--font-montserrat: 'Montserrat', sans-serif;
 	--font-fraunces: 'Fraunces', serif;
 }
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -20,7 +22,7 @@
 */
 * {
 	margin: 0;
-	padding: 0;
+	/* padding: 0; */
 }
 /*
   3. Allow percentage-based heights in the application
@@ -72,62 +74,129 @@ h6 {
 }
 
 body {
-	display: flex;
-	/* justify-content: center; */
-	/* align-content: center; */
-	flex-direction: column;
-	padding: 28px 16px;
 	background-color: var(--cream);
+	color: var(--dark-grayish-blue);
+	font-size: 0.875rem;
+	font-weight: 400;
 	font-family: var(--font-montserrat);
+}
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100%;
+	margin: 16px;
 }
 
 .card {
 	display: flex;
 	flex-direction: column;
-	margin-left: auto;
-	margin-right: auto;
-	/* max-width: 600px; */
-	height: 100%;
 	background-color: var(--white);
-	font-size: 1.14rem;
+	border-radius: 8px;
+	overflow: hidden;
 }
 
-.card-image {
-	background-image: url(../images/image-product-mobile.jpg);
-	background-size: cover;
-  /* background-position: center; */
-	/* height: 150px; */
-	width: 100%;
-  flex: 1;
+.card__image {
+	font-size: 0;
+	line-height: 0;
 }
 
-.card-content {
-	padding: 24px;
+.img_desktop {
+	display: none;
+}
+
+.card__content {
 	display: flex;
 	flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-
+	justify-content: space-between;
+	gap: 16px;
+	padding: 24px;
 }
 
-h2 {
+.card__category {
 	text-transform: uppercase;
-	font-size: 12px;
 	letter-spacing: 5px;
-	color: var(--dark-grayish-blue);
 }
 
-h1 {
+.card__title {
 	line-height: 1;
-	padding-top: 12px;
-	padding-bottom: 16px;
+	font-size: 2rem;
+	color: var(--very-dark-blue);
 	font-family: var(--font-fraunces);
 }
 
-p {
-	color: var(--dark-grayish-blue);
+.card__price {
+	display: flex;
+	align-items: center;
+	gap: 16px;
 }
 
+.card__price .current_price {
+	font-size: 2rem;
+	font-weight: 700;
+	font-family: var(--font-fraunces);
+	color: var(--dark-cyan);
+}
+
+.card__price .old_price {
+	text-decoration: line-through;
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	background-color: var(--dark-cyan);
+	color: var(--white);
+	padding: 1rem 1.5rem;
+	font-weight: 700;
+	border-radius: 0.5rem;
+	border: 0;
+}
+
+.btn:hover {
+	background-color: var(--very-dark-cyan);
+}
 footer {
-	margin-top: auto;
+	position: relative;
+	top: 32px;
+}
+
+.footer__text {
+	font-weight: 700;
+	font-size: 0.75rem;
+}
+
+footer .attribution a {
+	text-decoration: none;
+	color: var(--dark-cyan);
+}
+
+@media (min-width: 590px) {
+	.img_desktop {
+		display: block;
+		min-height: 100%;
+	}
+	.img_mobile {
+		display: none;
+	}
+
+	.card {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		max-width: 600px;
+		max-height: 450px;
+	}
+
+	.card__content {
+		padding: 32px;
+	}
+
+	.footer__text {
+		font-size: 1rem;
+	}
 }
