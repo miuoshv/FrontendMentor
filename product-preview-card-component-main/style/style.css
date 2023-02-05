@@ -118,6 +118,7 @@ body {
 .card__category {
 	text-transform: uppercase;
 	letter-spacing: 5px;
+	font-size: 0.75rem;
 }
 
 .card__title {
