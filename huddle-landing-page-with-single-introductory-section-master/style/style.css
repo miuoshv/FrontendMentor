@@ -1,0 +1,144 @@
+:root {
+	--clr-violet: hsl(257, 40%, 49%);
+	--soft-magenta: hsl(300, 69%, 71%);
+	--font-heading: 'Poppins', sans-serif;
+	--font-body: 'Open Sans', sans-serif;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+	margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+	height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+body {
+	background-image: url(../images/bg-mobile.svg);
+	background-size: cover;
+	background-color: var(--clr-violet);
+	font-family: var(--font-body);
+	padding: 36px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+}
+
+header {
+	max-height: 100px;
+}
+
+.content-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 24px;
+	color: white;
+}
+
+.content-title {
+	font-family: var(--font-heading);
+	font-weight: 600;
+	text-align: center;
+}
+
+.content-text {
+	text-align: center;
+}
+
+.btn-register {
+	padding: 0.6rem 5rem;
+	font-size: 0.75rem;
+	background-color: white;
+	color: var(--clr-violet);
+	border-radius: 2rem;
+	border: 0;
+}
+
+.social-icons {
+	display: flex;
+	justify-content: center;
+	color: white;
+}
+
+.social-icon {
+	font-size: 0.75rem;
+}
+
+@media (min-width: 700px) {
+	main {
+		display: flex;
+		flex-direction: row;
+		/* justify-content: center;
+		align-items: center; */
+	}
+
+	.content-section {
+		flex-basis: 50%;
+	}
+
+	.image-section {
+		flex-basis: 50%;
+	}
+}
