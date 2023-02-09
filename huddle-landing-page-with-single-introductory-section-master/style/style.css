@@ -18,6 +18,7 @@
 */
 * {
 	margin: 0;
+  padding: 0;
 }
 /*
   3. Allow percentage-based heights in the application
@@ -86,13 +87,26 @@ body {
 
 header {
 	max-height: 100px;
+  margin-bottom: 48px;
 }
+
+.logo {
+  width: 40%;
+  max-width: 200px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 
 .content-section {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  align-items: center;
+	max-width: 550px;
 	gap: 24px;
 	color: white;
 }
@@ -108,37 +122,53 @@ header {
 }
 
 .btn-register {
-	padding: 0.6rem 5rem;
+	padding: 0.6rem 2rem;
 	font-size: 0.75rem;
 	background-color: white;
 	color: var(--clr-violet);
 	border-radius: 2rem;
 	border: 0;
+  width: 60%;
 }
 
 .social-icons {
 	display: flex;
 	justify-content: center;
 	color: white;
+  gap: .5rem;
+
+  margin-top: 64px;
 }
 
-.social-icon {
-	font-size: 0.75rem;
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid white;
+  border-radius: 50%;
 }
 
-@media (min-width: 700px) {
-	main {
-		display: flex;
+@media (min-width: 650px) {
+	
+  main {
 		flex-direction: row;
-		/* justify-content: center;
-		align-items: center; */
 	}
 
 	.content-section {
-		flex-basis: 50%;
+		flex-basis: 40%;
 	}
 
 	.image-section {
-		flex-basis: 50%;
+		flex-basis: 60%;
 	}
+
+	.social-icons {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+    width: 100%;
+	}
+
 }
